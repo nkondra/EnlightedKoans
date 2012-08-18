@@ -22,14 +22,18 @@ class AboutHashes < EdgeCase::Koan
 
   def test_accessing_hashes_with_fetch
     hash = { :one => "uno" }
-    assert_equal __, hash.fetch(:one)
-    assert_raise(___) do
+    assert_equal "uno", hash.fetch(:one)
+    assert_raise(KeyError) do
       hash.fetch(:doesnt_exist)
     end
 
     # THINK ABOUT IT:
     #
     # Why might you want to use #fetch instead of #[] when accessing hash keys?
+    #
+    # I would think you should probably use a fetch to ensure that you don't get a nil, instead get tossed an error
+    #
+
   end
 
   def test_changing_hashes
