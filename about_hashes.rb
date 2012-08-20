@@ -51,7 +51,7 @@ class AboutHashes < EdgeCase::Koan
     hash1 = { :one => "uno", :two => "dos" }
     hash2 = { :two => "dos", :one => "uno" }
 
-    assert_equal __, hash1 == hash2
+    assert_equal true, hash1 == hash2
   end
 
   def test_hash_keys
