@@ -113,8 +113,8 @@ class AboutHashes < EdgeCase::Koan
     hash[:one] << "uno"
     hash[:two] << "dos"
 
-    assert_equal __, hash[:one]
-    assert_equal __, hash[:two]
-    assert_equal __, hash[:three]
+    assert_equal ["uno"], hash[:one]
+    assert_equal ["dos"], hash[:two]
+    assert_equal [], hash[:three]
   end
 end
