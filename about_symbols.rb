@@ -32,19 +32,21 @@ class AboutSymbols < EdgeCase::Koan
   #
   # Why do we convert the list of symbols to strings and then compare
   # against the string value rather than against symbols?
+  #
+  # For each symbol, only one of it actually exists. Thus, when comparing the equality of two symbols, you're comparing object identity and not the content of the identifier that refers to this symbol.
 
   in_ruby_version("mri") do
     RubyConstant = "What is the sound of one hand clapping?"
     def test_constants_become_symbols
       all_symbols = Symbol.all_symbols
 
-      assert_equal __, all_symbols.include?(__)
+      assert_equal false, all_symbols.include?(RubyConstant)
     end
   end
 
   def test_symbols_can_be_made_from_strings
     string = "catsAndDogs"
-    assert_equal __, string.to_sym
+    assert_equal :catsAndDogs, string.to_sym
   end
 
   def test_symbols_with_spaces_can_be_built
