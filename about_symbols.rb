@@ -93,10 +93,12 @@ class AboutSymbols < EdgeCase::Koan
   end
 
   def test_symbols_can_be_dynamically_created
-    assert_equal __, ("cats" + "dogs").to_sym
+    assert_equal :catsdogs, ("cats" + "dogs").to_sym
   end
 
   # THINK ABOUT IT:
   #
   # Why is it not a good idea to dynamically create a lot of symbols?
+  #
+  # Cause you would have a lot less ability to find them and without the method hooks it would be hard to keep track of them
 end
