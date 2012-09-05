@@ -59,7 +59,7 @@ class AboutSymbols < EdgeCase::Koan
     value = "and"
     symbol = :"cats #{value} dogs"
 
-    assert_equal symbol, __.to_sym
+    assert_equal symbol, "cats and dogs".to_sym
   end
 
   def test_to_s_is_called_on_interpolated_symbols
