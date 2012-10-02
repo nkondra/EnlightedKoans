@@ -26,13 +26,15 @@ class AboutRegularExpressions < EdgeCase::Koan
   end
 
   def test_asterisk_means_zero_or_more
-    assert_equal __, "abbcccddddeeeee"[/ab*/]
-    assert_equal __, "abbcccddddeeeee"[/az*/]
-    assert_equal __, "abbcccddddeeeee"[/z*/]
+    assert_equal "abb", "abbcccddddeeeee"[/ab*/]
+    assert_equal "a", "abbcccddddeeeee"[/az*/]
+    assert_equal "", "abbcccddddeeeee"[/z*/]
 
     # THINK ABOUT IT:
     #
     # When would * fail to match?
+    #
+    # Well cause it was looking for zero or more and zero technically is a match... 
   end
 
   # THINK ABOUT IT:
@@ -40,6 +42,8 @@ class AboutRegularExpressions < EdgeCase::Koan
   # We say that the repetition operators above are "greedy."
   #
   # Why?
+  #
+  # Because they will by default will match the maximum ammount of matches while still upholding the pattern 
 
   # ------------------------------------------------------------------
 
