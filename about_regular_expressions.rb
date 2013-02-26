@@ -148,11 +148,13 @@ class AboutRegularExpressions < EdgeCase::Koan
   # THINK ABOUT IT:
   #
   # Explain the difference between a character class ([...]) and alternation (|).
-
+  #
+  # Character Classes are designed for: to match one of the included characters. Therefore it's also the most readable and shortest solution.
+  # The regex token [abc] will be applied in a single step of the regex engine: "Is the next character one of a, b, or c?" Alteration will not but big sweeps.
   # ------------------------------------------------------------------
 
   def test_scan_is_like_find_all
-    assert_equal __, "one two-three".scan(/\w+/)
+    assert_equal ["one", "two", "three"], "one two-three".scan(/\w+/)
   end
 
   def test_sub_is_like_find_and_replace
