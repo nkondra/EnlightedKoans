@@ -102,7 +102,7 @@ class AboutMethods < EdgeCase::Koan
   end
 
   def test_calling_methods_in_same_class_with_explicit_receiver
-    assert_equal nil, self.my_method_in_the_same_class(3,4)
+    assert_equal 12, self.my_method_in_the_same_class(3,4)
   end
 
   # ------------------------------------------------------------------
@@ -113,7 +113,7 @@ class AboutMethods < EdgeCase::Koan
   private :my_private_method
 
   def test_calling_private_methods_without_receiver
-    assert_equal __, my_private_method
+    assert_equal "a secret", my_private_method
   end
 
   def test_calling_private_methods_with_an_explicit_receiver
