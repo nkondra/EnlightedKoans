@@ -63,12 +63,13 @@ class AboutConstants < EdgeCase::Koan
   end
 
   def test_who_wins_with_both_nested_and_inherited_constants
-    assert_equal __, MyAnimals::Bird.new.legs_in_bird
+    assert_equal 2, MyAnimals::Bird.new.legs_in_bird
   end
 
   # QUESTION: Which has precedence: The constant in the lexical scope,
   # or the constant from the inheritance hierarchy?
-
+  #
+  # Nested Constants will override inheirited because they are closer to the calling class in the chain
   # ------------------------------------------------------------------
 
   class MyAnimals::Oyster < Animal
