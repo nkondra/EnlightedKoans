@@ -38,11 +38,8 @@ def score(dice)
   end
   dice_breakdown.each do |k, v|
     if k == 1
-      if v == 3 
-        score += 1000
-      else
-        score += 100 * v
-      end
+      score += 100 * v
+      score += 700 if v >= 3
     elsif k == 2
       score += 200 if v >= 3
     elsif k == 3
@@ -50,11 +47,8 @@ def score(dice)
     elsif k == 4
       score += 400 if v >= 3
     elsif k == 5
-      if v == 3 
-        score += 500
-      else
-        score += 50 * v
-      end
+      score += 50 * v
+      score += 350 if v >= 3
     elsif k == 6
       score += 600 if v >= 3
     end  
