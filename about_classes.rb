@@ -119,11 +119,14 @@ class AboutClasses < EdgeCase::Koan
   end
 
   def test_args_to_new_must_match_initialize
-    assert_raise(___) do
+    assert_raise(ArgumentError) do
       Dog6.new
     end
     # THINK ABOUT IT:
     # Why is this so?
+    #
+    # My understanding is that the initialize method is a constructor method, it explains how the class is created into an object. Without completing the argument list ruby in essence doesn't understand how to create the object. 
+    #
   end
 
   def test_different_objects_have_different_instance_variables
