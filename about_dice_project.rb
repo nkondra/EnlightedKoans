@@ -3,7 +3,11 @@ require File.expand_path(File.dirname(__FILE__) + '/edgecase')
 # Implement a DiceSet Class here:
 
 class DiceSet
-  
+  attr_reader :values
+
+  def roll(number_of_dice)
+    @values = number_of_dice.times.map { rand(6) + 1 }
+  end
 end
 
 class AboutDiceProject < EdgeCase::Koan
@@ -48,6 +52,9 @@ class AboutDiceProject < EdgeCase::Koan
     # If the rolls are random, then it is possible (although not
     # likely) that two consecutive rolls are equal.  What would be a
     # better way to test this.
+    #
+    # I think the best way to test to ensure they are different would be to confirm that the Object_id has changed and is pointing to different memory locations
+    #
   end
 
   def test_you_can_roll_different_numbers_of_dice
