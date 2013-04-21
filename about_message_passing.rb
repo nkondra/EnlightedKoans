@@ -42,14 +42,14 @@ class AboutMessagePassing < EdgeCase::Koan
     # Why there is send and not just __send__. If there were only __send__ the name send could be used by other classes without any confusion. 
     # The reason for that is that send existed first and only later it was realized that the name send might also usefully be used in other contexts, so __send__ was added.
     #
-    
+
   end
 
   def test_classes_can_be_asked_if_they_know_how_to_respond
     mc = MessageCatcher.new
 
-    assert_equal __, mc.respond_to?(:caught?)
-    assert_equal __, mc.respond_to?(:does_not_exist)
+    assert_equal true, mc.respond_to?(:caught?)
+    assert_equal false, mc.respond_to?(:does_not_exist)
   end
 
   # ------------------------------------------------------------------
